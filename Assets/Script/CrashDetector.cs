@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CrashDetector : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
@@ -7,7 +7,7 @@ public class CrashDetector : MonoBehaviour
         int layerFloorIndex=LayerMask.NameToLayer("Floor");
         if (collision.gameObject.layer==layerFloorIndex)
         {
-            Debug.Log("Player Lost");
+            SceneManager.LoadScene(0);
         }
     }
 }
