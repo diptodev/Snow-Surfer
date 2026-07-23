@@ -8,12 +8,13 @@ public class PlayerController : MonoBehaviour
     SurfaceEffector2D surfaceEffector2D;
     InputAction moveAction;
     
- int boosterLayerIndex=LayerMask.NameToLayer("Booster");
+ int boosterLayerIndex;
  Vector2 moveVector;
     Rigidbody2D myRigidBody;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        boosterLayerIndex=LayerMask.NameToLayer("Booster");
         moveAction=InputSystem.actions.FindAction("Move");
         myRigidBody=GetComponent<Rigidbody2D>();
         surfaceEffector2D=FindAnyObjectByType<SurfaceEffector2D>();
