@@ -7056,6 +7056,7 @@ GameObject:
   - component: {fileID: 707523542}
   - component: {fileID: 707523543}
   - component: {fileID: 707523544}
+  - component: {fileID: 707523545}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -7210,6 +7211,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrashDetector
   crashParticle: {fileID: 705961260}
   playerParticle: {fileID: 1056426902}
+--- !u!114 &707523545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707523536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552f6d414e3ae3c4a81d499289c86fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnowTrails
+  snowTrails: {fileID: 1056426902}
 --- !u!1 &726867743
 GameObject:
   m_ObjectHideFlags: 0
@@ -7909,7 +7923,7 @@ GameObject:
   - component: {fileID: 1056426902}
   - component: {fileID: 1056426901}
   m_Layer: 6
-  m_Name: Particles
+  m_Name: SnowTrails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8027,7 +8041,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
