@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour
     bool canControolPlayer=true;
     SurfaceEffector2D surfaceEffector2D;
     InputAction moveAction;
-    
+    float previousRotation;
+    float currentRotation;
+    float totalRotation;
+    int totalFlip;
  
  Vector2 moveVector;
     Rigidbody2D myRigidBody;
@@ -29,7 +32,12 @@ public class PlayerController : MonoBehaviour
   {
      rotatePlayer();
    boostPlayer();
+   
+ //  Debug.Log(totalRotation);
   }
+   
+   flipCount();
+   
     }
     void rotatePlayer()
     {
@@ -57,5 +65,17 @@ public class PlayerController : MonoBehaviour
    public  void disablePlayerControl()
     {
         canControolPlayer=false; 
+    }
+    public void flipCount()
+    {
+        currentRotation=transform.rotation.eulerAngles.z;
+        totalRotation+=Mathf.DeltaAngle(previousRotation,currentRotation);
+        previousRotation=currentRotation;
+        if (totalRotation>340 || totalRotation<-340)
+        {
+            totalFlip+=1;
+            totalRotation=0;
+        }
+        Debug.Log(totalFlip);
     }
 }
